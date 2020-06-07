@@ -47,7 +47,6 @@ class PokemonDetailView: BaseController {
             
             if result is JSON{
                 let responseJSON = result as! JSON
-                print(responseJSON)
                 
                 self.loadImage(imageURL: responseJSON["sprites"]["front_default"].stringValue)
                 self.namePokemon.text = responseJSON["name"].stringValue.capitalizingFirstLetter()

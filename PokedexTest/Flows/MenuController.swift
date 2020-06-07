@@ -18,8 +18,8 @@ class MenuController: UIViewController, UITableViewDelegate, UITableViewDataSour
         mainView.backgroundColor = UIColor(white: 0, alpha: 0.5)
         tableView.backgroundColor = .white
         menuData.append(JSON(["id": 1, "name": "Pokemon", "image": "pokemon_icon"]))
-        menuData.append(JSON(["id": 1, "name": "Movements", "image": "mooves_icon"]))
-        menuData.append(JSON(["id": 1, "name": "Items", "image": "items_icon"]))
+        menuData.append(JSON(["id": 2, "name": "Moves", "image": "mooves_icon"]))
+        menuData.append(JSON(["id": 3, "name": "Items", "image": "items_icon"]))
 
     }
     
@@ -37,6 +37,26 @@ class MenuController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
+        var newView: UIViewController?
+
+        switch menuData[indexPath.row]["id"].intValue {
+        case 1:
+            newView = MainFlowWireFrame.createMainFlowModule()
+        case 3:
+            newView = ItemListWireFrame.createItemListModule()
+
+        default:
+            newView = MainFlowWireFrame.createMainFlowModule()
+        }
+        
+        if(newView != nil) {
+            if(Navigation.getCurrentController()!.classForCoder != newView!.classForCoder) {
+                appDelegate.globalNavigationController!.pushViewController(newView!, animated: true)
+            }
+        }
+
+        dismissMenu()
+        
     }
 
     
