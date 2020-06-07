@@ -56,14 +56,7 @@ class ItemListView: BaseController, UITableViewDelegate, UITableViewDataSource {
                 let responseJSON = result as! JSON
                 self.listData = responseJSON["results"].arrayValue
                 self.tableview.reloadData()
-            } else {
-                let alert = UIAlertController(title: "Error", message: "An error occurred, please try later.", preferredStyle: UIAlertController.Style.alert)
-
-                alert.addAction(UIAlertAction(title: "Aceptar", style: UIAlertAction.Style.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
             }
-            
-            
             
         })
     }

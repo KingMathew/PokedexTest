@@ -18,7 +18,7 @@ class MenuController: UIViewController, UITableViewDelegate, UITableViewDataSour
         mainView.backgroundColor = UIColor(white: 0, alpha: 0.5)
         tableView.backgroundColor = .white
         menuData.append(JSON(["id": 1, "name": "Pokemon", "image": "pokemon_icon"]))
-        menuData.append(JSON(["id": 2, "name": "Moves", "image": "mooves_icon"]))
+        menuData.append(JSON(["id": 2, "name": "Search", "image": "search_icon"]))
         menuData.append(JSON(["id": 3, "name": "Items", "image": "items_icon"]))
 
     }
@@ -42,6 +42,8 @@ class MenuController: UIViewController, UITableViewDelegate, UITableViewDataSour
         switch menuData[indexPath.row]["id"].intValue {
         case 1:
             newView = MainFlowWireFrame.createMainFlowModule()
+        case 2:
+            newView = PokemonSearchWireFrame.createPokemonSearchModule()
         case 3:
             newView = ItemListWireFrame.createItemListModule()
 
