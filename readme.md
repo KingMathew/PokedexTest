@@ -4,6 +4,7 @@ Aplicación en IOS que utiliza la POKEAPI https://pokeapi.co/
 
 ## Capturas de pantalla
 
+### Listado de POKEMON
 
-![alt text](https://media-cdn.tripadvisor.com/media/photo-s/14/9e/49/48/riad-dar-fes.jpg)
+![alt text](https://raw.githubusercontent.com/KingMathew/PokedexTest/master/screenshoots/listado.png)
 
