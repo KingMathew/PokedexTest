@@ -49,10 +49,10 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDY-BJ-D7r">
-                    <rect key="frame" x="311" y="26.333333333333332" width="48" height="47.666666666666671"/>
+                    <rect key="frame" x="311" y="34.666666666666664" width="35" height="30.999999999999993"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="47.666666666666671" id="Opw-xB-4Dj"/>
-                        <constraint firstAttribute="width" constant="48" id="mKd-IN-5yc"/>
+                        <constraint firstAttribute="height" constant="31" id="Opw-xB-4Dj"/>
+                        <constraint firstAttribute="width" constant="35" id="mKd-IN-5yc"/>
                     </constraints>
                     <state key="normal" image="menu_icon"/>
                     <connections>
@@ -64,7 +64,7 @@
             <constraints>
                 <constraint firstItem="Oyj-LZ-Thh" firstAttribute="leading" secondItem="iwX-zT-n9D" secondAttribute="leading" constant="20" id="2Mq-fn-M6v"/>
                 <constraint firstItem="0qH-nD-tGO" firstAttribute="leading" secondItem="iwX-zT-n9D" secondAttribute="leading" id="40E-0a-ywW"/>
-                <constraint firstAttribute="trailing" secondItem="qDY-BJ-D7r" secondAttribute="trailing" constant="16" id="6Qa-ej-YxO"/>
+                <constraint firstAttribute="trailing" secondItem="qDY-BJ-D7r" secondAttribute="trailing" constant="29" id="6Qa-ej-YxO"/>
                 <constraint firstItem="rdz-I5-b9k" firstAttribute="leading" secondItem="Oyj-LZ-Thh" secondAttribute="trailing" constant="14" id="TWO-JJ-zOD"/>
                 <constraint firstAttribute="bottom" secondItem="0qH-nD-tGO" secondAttribute="bottom" id="aBA-5l-g4c"/>
                 <constraint firstItem="Oyj-LZ-Thh" firstAttribute="centerY" secondItem="iwX-zT-n9D" secondAttribute="centerY" id="apA-HB-tyF"/>

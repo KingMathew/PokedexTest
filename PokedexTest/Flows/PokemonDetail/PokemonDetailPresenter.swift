@@ -18,9 +18,15 @@ class PokemonDetailPresenter  {
 }
 
 extension PokemonDetailPresenter: PokemonDetailPresenterProtocol {
+        
     // TODO: implement presenter methods
     func viewDidLoad() {
     }
+    
+    func presenterGetDataFromService(url: String, callback: @escaping (Any) -> ()) {
+        interactor?.interactorGetDataFromService(url: url, callback: callback)
+    }
+
 }
 
 extension PokemonDetailPresenter: PokemonDetailInteractorOutputProtocol {

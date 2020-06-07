@@ -26,6 +26,7 @@ protocol PokemonDetailPresenterProtocol: class {
     var wireFrame: PokemonDetailWireFrameProtocol? { get set }
     
     func viewDidLoad()
+    func presenterGetDataFromService(url: String, callback: @escaping (Any) -> ())
 }
 
 protocol PokemonDetailInteractorOutputProtocol: class {
@@ -37,6 +38,8 @@ protocol PokemonDetailInteractorInputProtocol: class {
     var presenter: PokemonDetailInteractorOutputProtocol? { get set }
     var localDatamanager: PokemonDetailLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: PokemonDetailRemoteDataManagerInputProtocol? { get set }
+    
+    func interactorGetDataFromService(url: String, callback: @escaping (Any) -> ())
 }
 
 protocol PokemonDetailDataManagerInputProtocol: class {
@@ -46,6 +49,9 @@ protocol PokemonDetailDataManagerInputProtocol: class {
 protocol PokemonDetailRemoteDataManagerInputProtocol: class {
     // INTERACTOR -> REMOTEDATAMANAGER
     var remoteRequestHandler: PokemonDetailRemoteDataManagerOutputProtocol? { get set }
+    
+    func getDataFromService(url: String, callback: @escaping (Any) -> ())
+    
 }
 
 protocol PokemonDetailRemoteDataManagerOutputProtocol: class {

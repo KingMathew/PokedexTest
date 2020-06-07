@@ -7,9 +7,22 @@
 //
 
 import Foundation
+import SwiftyJSON
 
-class PokemonDetailRemoteDataManager:PokemonDetailRemoteDataManagerInputProtocol {
-    
+class PokemonDetailRemoteDataManager: PokemonDetailRemoteDataManagerInputProtocol {
+
     var remoteRequestHandler: PokemonDetailRemoteDataManagerOutputProtocol?
-    
+
+    func getDataFromService(url: String, callback: @escaping (Any) -> ()) {
+        Webservices.requestGet(url: url, callbackSuccess: { response in
+            let responseJSON = JSON(response)
+            callback(responseJSON)
+
+        }, callbackFail: { error in
+                print("Response error: \(error)")
+                callback(error)
+
+            })
+    }
+
 }

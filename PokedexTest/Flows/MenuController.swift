@@ -18,7 +18,7 @@ class MenuController: UIViewController, UITableViewDelegate, UITableViewDataSour
         mainView.backgroundColor = UIColor(white: 0, alpha: 0.5)
         tableView.backgroundColor = .white
         menuData.append(JSON(["id": 1, "name": "Pokemon", "image": "pokemon_icon"]))
-        menuData.append(JSON(["id": 1, "name": "Movimientos", "image": "mooves_icon"]))
+        menuData.append(JSON(["id": 1, "name": "Movements", "image": "mooves_icon"]))
         menuData.append(JSON(["id": 1, "name": "Items", "image": "items_icon"]))
 
     }

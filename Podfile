@@ -9,5 +9,7 @@ target 'PokedexTest' do
   pod 'SwiftyJSON'
   pod 'Alamofire'
   pod 'SideMenu'
+  pod 'AlamofireImage'
+
 
 end
