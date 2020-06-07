@@ -18,8 +18,20 @@ class MainFlowPresenter  {
 }
 
 extension MainFlowPresenter: MainFlowPresenterProtocol {
+    
+    
+    
+    
     // TODO: implement presenter methods
     func viewDidLoad() {
+    }
+    
+    func presenterGetDataFromService(url: String, extra: String, callback: @escaping (Any) -> ()) {
+        interactor?.interactorGetDataFromService(url: url, extra: extra, callback: callback)
+    }
+    
+    func showPokemonDetail(urlDetail: String) {
+        wireFrame?.presentDetail(urlDetail: urlDetail, from: view!)
     }
 }
 

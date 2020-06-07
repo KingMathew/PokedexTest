@@ -17,6 +17,8 @@ protocol MainFlowViewProtocol: class {
 protocol MainFlowWireFrameProtocol: class {
     // PRESENTER -> WIREFRAME
     static func createMainFlowModule() -> UIViewController
+    
+    func presentDetail(urlDetail: String, from view: MainFlowViewProtocol)
 }
 
 protocol MainFlowPresenterProtocol: class {
@@ -26,6 +28,10 @@ protocol MainFlowPresenterProtocol: class {
     var wireFrame: MainFlowWireFrameProtocol? { get set }
     
     func viewDidLoad()
+    
+    func showPokemonDetail(urlDetail: String)
+    
+    func presenterGetDataFromService(url: String, extra: String, callback: @escaping (Any)->())
 }
 
 protocol MainFlowInteractorOutputProtocol: class {
@@ -37,6 +43,7 @@ protocol MainFlowInteractorInputProtocol: class {
     var presenter: MainFlowInteractorOutputProtocol? { get set }
     var localDatamanager: MainFlowLocalDataManagerInputProtocol? { get set }
     var remoteDatamanager: MainFlowRemoteDataManagerInputProtocol? { get set }
+    func interactorGetDataFromService(url: String, extra: String, callback: @escaping (Any)->())
 }
 
 protocol MainFlowDataManagerInputProtocol: class {
@@ -46,6 +53,9 @@ protocol MainFlowDataManagerInputProtocol: class {
 protocol MainFlowRemoteDataManagerInputProtocol: class {
     // INTERACTOR -> REMOTEDATAMANAGER
     var remoteRequestHandler: MainFlowRemoteDataManagerOutputProtocol? { get set }
+    
+    func getDataFromService(url: String, extra: String, callback: @escaping (Any)->())
+    
 }
 
 protocol MainFlowRemoteDataManagerOutputProtocol: class {

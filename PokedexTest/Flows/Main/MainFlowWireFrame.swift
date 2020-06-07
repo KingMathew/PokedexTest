@@ -38,4 +38,11 @@ class MainFlowWireFrame: MainFlowWireFrameProtocol {
         return UIStoryboard(name: "Main", bundle: Bundle.main)
     }
     
+    func presentDetail(urlDetail: String, from view: MainFlowViewProtocol) {
+        let new = PokemonDetailWireFrame.createPokemonDetailModule(urlDetail: urlDetail)
+        if let newView = view as? UIViewController{
+            newView.navigationController?.pushViewController(new, animated: true)
+        }
+    }
+    
 }

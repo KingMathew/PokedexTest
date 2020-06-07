@@ -9,11 +9,17 @@
 import Foundation
 
 class MainFlowInteractor: MainFlowInteractorInputProtocol {
+    
+    
 
     // MARK: Properties
     weak var presenter: MainFlowInteractorOutputProtocol?
     var localDatamanager: MainFlowLocalDataManagerInputProtocol?
     var remoteDatamanager: MainFlowRemoteDataManagerInputProtocol?
+    
+    func interactorGetDataFromService(url: String, extra: String, callback: @escaping (Any) -> ()) {
+        remoteDatamanager?.getDataFromService(url: url, extra: extra, callback: callback)
+    }
 
 }
 

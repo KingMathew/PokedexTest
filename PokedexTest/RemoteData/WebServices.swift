@@ -13,16 +13,13 @@ class Webservices {
         }
     }
 
-    public enum METHODS: String {
-        case PATH_POKEMON_LIST = "pokemon"
-    }
+    
 
 
 
-    static func requestGet(pathMethod: METHODS, callbackSuccess: @escaping (AnyObject) -> (), callbackFail: @escaping (AnyObject) -> ()) {
+    static func requestGet(url: String, callbackSuccess: @escaping (AnyObject) -> (), callbackFail: @escaping (AnyObject) -> ()) {
 
-        let host = Globals.URL_BASE
-        AF.request(host + pathMethod.rawValue).validate().responseJSON { response in
+        AF.request(url).validate().responseJSON { response in
 
             switch response.result {
             case .success(let value):

@@ -7,9 +7,26 @@
 //
 
 import Foundation
+import SwiftyJSON
 
 class MainFlowRemoteDataManager:MainFlowRemoteDataManagerInputProtocol {
     
+    
+    
     var remoteRequestHandler: MainFlowRemoteDataManagerOutputProtocol?
+    
+    func getDataFromService(url: String, extra: String, callback: @escaping (Any) -> ()) {
+        Webservices.requestGet(url: url + extra, callbackSuccess: { response in
+            let responseJSON = JSON(response)
+            callback(responseJSON)
+
+        }, callbackFail: { error in
+
+                print("Response error: \(error)")
+            callback(error)
+
+            })
+    }
+
     
 }
